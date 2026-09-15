@@ -1,0 +1,16 @@
+# {{ ansible_managed }}
+# Managed by Ansible. Local edits will be overwritten
+
+Port {{ ssh_hardening_port }}
+PermitRootLogin {{ ssh_hardening_permit_root_login }}
+PasswordAuthentication {{ ssh_hardening_password_authentication }}
+PubkeyAuthentication {{ ssh_hardening_pubkey_authentication }}
+PermitEmptyPasswords {{ ssh_hardening_permit_empty_passwords }}
+X11Forwarding {{ ssh_hardening_x11_forwarding }}
+MaxAuthTries {{ ssh_hardening_max_auth_tries }}
+ClientAliveInterval {{ ssh_hardening_client_alive_interval }}
+ClientAliveCountMax {{ ssh_hardening_client_alive_count_max }}
+
+{% if ssh_hardening_allow_users %}
+AllowUsers {{ ssh_hardening_allow_users | join(' ') }}
+{% endif %}
