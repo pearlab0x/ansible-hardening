@@ -1,0 +1,24 @@
+# Local Ansible config (holds a machine-specific collections_path, not portable)
+ansible.cfg
+.ansible-lint
+
+# Ansible caches and runtime artifacts
+.ansible/
+*.retry
+fact_cache/
+
+# Secrets: never commit a vault password
+vault_pass.txt
+*.vault
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Molecule ephemeral state (added later)
+.molecule/
+
+# OS / editor junk
+.DS_Store
+*.swp
