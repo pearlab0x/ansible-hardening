@@ -1,0 +1,10 @@
+---
+baseline_timezone: "Etc/UTC"
+
+baseline_packages:
+  - curl
+  - vim
+  - htop
+  - ca-certificates
+
+baseline_enable_unattended_upgrades: true

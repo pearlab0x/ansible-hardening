@@ -1,0 +1,21 @@
+---
+- name: Set the system timezone
+  community.general.timezone:
+    name: "{{ baseline_timezone }}"
+- name: Install baseline packages
+  ansible.builtin.package:
+    name: " {{baseline_packages }}"
+    state: present
+- name: Install unattended-upgrades
+  ansible.builtin.apt:
+    name: unattended-upgrades
+    state: present
+  when: ansible_facts['os_family'] == "Debian"
+- name: Enable the unattended-upgrades service
+  ansible.builtin.systemd:
+    name: unattended-upgrades
+    enabled: true
+    state: started
+  when:
+    - ansible_facts['os_family'] == "Debian"
+    - baseline_enable_unattended_upgrades

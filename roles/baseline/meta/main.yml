@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  role_name: baseline
+  namespace: pearlab0x
+  author: pearlab0x
+  description: Baseline system config (timezone, packages, unattended upgrades)
+  license: MIT
+  min_ansible_version: "2.15"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+        - trixie
+    - name: EL
+      versions:
+        - "9"
+  galaxy_tags:
+    - baseline
+    - hardening
+
+dependencies: []
