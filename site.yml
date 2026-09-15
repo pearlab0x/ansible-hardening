@@ -1,0 +1,6 @@
+---
+- name: Apply hardening baseline
+  hosts: hardening_targets
+  become: true
+  roles:
+    - baseline
