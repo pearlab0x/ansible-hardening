@@ -1,10 +1,15 @@
 ---
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_facts['os_family'] == "Debian"
 - name: Set the system timezone
   community.general.timezone:
     name: "{{ baseline_timezone }}"
 - name: Install baseline packages
   ansible.builtin.package:
-    name: " {{baseline_packages }}"
+    name: "{{ baseline_packages }}"
     state: present
 - name: Install unattended-upgrades
   ansible.builtin.apt:
