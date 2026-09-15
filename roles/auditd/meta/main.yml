@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: auditd
+  namespace: pearlab0x
+  author: pearlab0x
+  description: Installs auditd and deploys a baseline set of audit rules
+  license: MIT
+  min_ansible_version: "2.15"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+        - trixie
+    - name: EL
+      versions:
+        - "9"
+  galaxy_tags:
+    - auditd
+    - security
+
+dependencies:
+  - role: baseline

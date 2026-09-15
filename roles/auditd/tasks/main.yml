@@ -1,0 +1,17 @@
+---
+- name: Install auditd
+  ansible.builtin.package:
+    name: "{{ auditd_package_name }}"
+    state: present
+- name: Deploy audit rules
+  ansible.builtin.copy:
+    content: |
+      # Managed by Ansible. Local edits will be overwritten.
+      {% for rule in auditd_rules %}
+      {{ rule }}
+      {% endfor %}
+    dest: /etc/audit/rules.d/hardening.rules
+    owner: root
+    group: root
+    mode: "0640"
+  notify: Restart auditd

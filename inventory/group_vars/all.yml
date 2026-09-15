@@ -1,2 +1,3 @@
 ---
 baseline_timezone: "Europe/Sofia"
+auditd_manage_service: false

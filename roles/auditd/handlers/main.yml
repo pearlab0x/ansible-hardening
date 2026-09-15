@@ -1,0 +1,6 @@
+---
+- name: Restart auditd
+  ansible.builtin.systemd:
+    name: "{{ auditd_service_name }}"
+    state: restarted
+  when: auditd_manage_service

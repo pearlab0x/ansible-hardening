@@ -1,0 +1,12 @@
+---
+auditd_package_name: auditd
+auditd_service_name: auditd
+
+auditd_manage_service: true
+
+auditd_rules:
+  - "-w /etc/passwd -p wa -k identity"
+  - "-w /etc/shadow -p wa -k identity"
+  - "-w /etc/sudoers -p wa -k privilege"
+  - "-w /etc/ssh/sshd_config -p wa -k sshd_config"
+  - "-w /var/log/auth.log -p wa -k auth_log"

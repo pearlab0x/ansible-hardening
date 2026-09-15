@@ -6,3 +6,4 @@
     - baseline
     - ssh_hardening
     - firewall
+    - auditd
