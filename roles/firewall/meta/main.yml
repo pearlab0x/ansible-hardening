@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  role_name: firewall
+  namespace: pearlab0x
+  author: pearlab0x
+  description: Configures a ufw firewall with default policies and allowed ports
+  license: MIT
+  min_ansible_version: "2.15"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+        - trixie
+    - name: EL
+      versions:
+        - "9"
+  galaxy_tags:
+    - firewall
+    - hardening
+
+dependencies: []

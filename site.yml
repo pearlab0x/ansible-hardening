@@ -5,3 +5,4 @@
   roles:
     - baseline
     - ssh_hardening
+    - firewall
